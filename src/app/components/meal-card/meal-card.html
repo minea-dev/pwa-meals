@@ -1,0 +1,9 @@
+@if (meal) {
+  <mat-card class="meal-card">
+    <img mat-card-image [src]="meal.strMealThumb" [alt]="meal.strMeal">
+    <mat-card-content>
+      <h3>{{ meal.strMeal }}</h3>
+      <p>{{ meal.strCategory }}</p>
+    </mat-card-content>
+  </mat-card>
+}

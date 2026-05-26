@@ -1,0 +1,53 @@
+@if (isLoading) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+} @else if (meal) {
+  <div class="detail-container">
+    <div class="header">
+      <h2>{{ meal.strMeal }}</h2>
+      <button mat-stroked-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+    </div>
+
+    <img class="main-image" [src]="meal.strMealThumb" [alt]="meal.strMeal">
+    <p class="subtitle">{{ meal.strCategory }} | {{ meal.strArea }}</p>
+
+    <div class="action-section">
+      <button mat-raised-button color="accent" (click)="toggleDetails()">
+        {{ showDetails ? 'Hide details' : 'Show all details' }}
+      </button>
+    </div>
+
+    @if (showDetails) {
+      <div class="details-section">
+        <mat-tab-group animationDuration="0ms">
+
+          <mat-tab label="Ingredientes">
+            <ul class="ingredients-list">
+              @for (item of ingredientsList; track item.name) {
+                <li><strong>{{ item.name }}</strong>: {{ item.measure }}</li>
+              }
+            </ul>
+          </mat-tab>
+
+          <mat-tab label="Instrucciones">
+            <p class="instructions">{{ meal.strInstructions }}</p>
+          </mat-tab>
+
+          @if (meal.strYoutube) {
+            <mat-tab label="Video (Link)">
+              <div class="video-link">
+                <a [href]="meal.strYoutube" target="_blank" mat-button color="warn">
+                  <mat-icon>play_circle_filled</mat-icon> Watch on YouTube
+                </a>
+              </div>
+            </mat-tab>
+          }
+
+        </mat-tab-group>
+      </div>
+    }
+  </div>
+}

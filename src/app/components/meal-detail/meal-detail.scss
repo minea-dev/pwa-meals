@@ -1,0 +1,66 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  h2 { margin: 0; font-size: 2em; }
+}
+
+.main-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.action-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.details-section {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  .ingredients-list {
+    line-height: 1.8;
+    padding: 20px 40px;
+  }
+
+  .instructions {
+    padding: 20px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+
+  .video-link {
+    padding: 20px;
+    text-align: center;
+  }
+}
